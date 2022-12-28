@@ -26,7 +26,7 @@ Please consult the dstat [manual](https://linux.die.net/man/1/dstat) for more de
 If you want to use GNU screen to observe some performance metrices, an example will be:
 
 ```
-screen -dmS screen_name /path_to_repo/dstat -t -l -d --noupdate /path_to_output_file/output.csv 15
+screen -dmS screen_name /path_to_repo/dstat -t -l -d --noupdate --output /path_to_output_file/output.csv 15
 
 ```
 
