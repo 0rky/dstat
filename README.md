@@ -1,6 +1,6 @@
 ## Why this repo:
 
-If you install dstat using <code>apt install dstat</code> in Ubuntu 22.04LTE there are many bugs that may occur while using it in CLI. In order to alleviate some of the common bugs in CLI, this repo is created. This repo also addresses the bug of creating an output csv file of certain performance metric while running in a detached GNU screen. 
+If you install dstat using <code>apt install dstat</code> in Ubuntu 22.04LTE there are many bugs that may occur while using it in CLI. In order to alleviate some of the common bugs in CLI, this repo is created. This repo also addresses the bug of creating an output csv file of certain performance metric while running  it in a detached GNU screen. 
 
 This repo is tested on ubuntu 22.04LTS. Build on top of debian version of [dstat](https://salsa.debian.org/debian/dstat). Which is a derivative of the original or real [dstat](http://github.com/dagwieers/dstat)
 
