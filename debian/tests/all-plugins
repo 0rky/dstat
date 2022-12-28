@@ -1,0 +1,3 @@
+#!/bin/sh
+
+dstat -t --all-plugins 1 5

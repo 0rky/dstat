@@ -1,0 +1,45 @@
+Description: fix NameErrors when passing delay gt 1
+Author: Emanuele Rocca <ema@debian.org>
+Last-Update: 2019-07-29
+
+diff --git a/dstat b/dstat
+index 9359965..f250f06 100755
+--- a/dstat
++++ b/dstat
+@@ -2726,7 +2729,11 @@ def perform(update):
+ 
+         ### FIXME: Make this part smarter
+         if sys.stdout.isatty():
+-            oldcols = cols
++            try:
++                oldcols = cols
++            except NameError:
++                oldcols, cols = 0, 0
++
+             rows, cols = gettermsize()
+ 
+             ### Trim object list to what is visible on screen
+@@ -2740,6 +2747,11 @@ def perform(update):
+ 
+             ### Check when to display the header
+             if op.header and rows >= 6:
++                try:
++                    oldvislist
++                except NameError:
++                    oldvislist = []
++
+                 if oldvislist != vislist:
+                     showheader = True
+                 elif not op.update and loop % (rows - 2) == 0:
+@@ -2766,6 +2778,11 @@ def perform(update):
+                 newline = ansi['restore']
+ 
+         ### Display header
++        try:
++            showheader
++        except NameError:
++            showheader = True
++
+         if showheader:
+             if loop == 0 and totlist != vislist:
+                 print('Terminal width too small, trimming output.', file=sys.stderr)

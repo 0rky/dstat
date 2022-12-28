@@ -1,0 +1,29 @@
+Description: import and use collections.abc
+ Address the following warning:
+ DeprecationWarning: Using or importing the ABCs from 'collections' instead of
+ from 'collections.abc' is deprecated, and in 3.8 it will stop working.
+Author: Emanuele Rocca <ema@debian.org>
+Last-Update: 2019-07-29
+
+diff --git a/dstat b/dstat
+index 9359965..6c6c7aa 100755
+--- a/dstat
++++ b/dstat
+@@ -19,7 +19,7 @@
+ from __future__ import absolute_import, division, generators, print_function
+ __metaclass__ = type
+ 
+-import collections
++import collections.abc
+ import fnmatch
+ import getopt
+ import getpass
+@@ -512,7 +512,7 @@ class dstat:
+                 scale = self.scales[i]
+             else:
+                 scale = self.scale
+-            if isinstance(self.val[name], collections.Sequence) and not isinstance(self.val[name], six.string_types):
++            if isinstance(self.val[name], collections.abc.Sequence) and not isinstance(self.val[name], six.string_types):
+                 line = line + cprintlist(self.val[name], ctype, self.width, scale)
+                 sep = theme['frame'] + char['colon']
+                 if i + 1 != len(self.vars):

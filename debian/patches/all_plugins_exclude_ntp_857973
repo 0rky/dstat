@@ -1,0 +1,21 @@
+Description: exclude ntp from --all-plugins
+ dstat has --all-plugins, a CLI option used by `make test` for testing
+ purposes. Exclude the ntp plugin from the list as it performs network access.
+Author: Emanuele Rocca <ema@debian.org>
+Bug-Debian: https://bugs.debian.org/857973
+Last-Update: 2019-07-29
+
+diff --git a/dstat b/dstat
+index 9359965..ef62a49 100755
+--- a/dstat
++++ b/dstat
+@@ -153,6 +153,9 @@ class Options:
+                 ### Make list unique in a fancy fast way
+                 plugins = list({}.fromkeys(allplugins).keys())
+                 plugins.sort()
++                # Do not include ntp plugin as it performs network access. See
++                # https://bugs.debian.org/857973
++                plugins.remove('ntp')
+                 self.plugins += plugins
+             elif opt in ['--bits']:
+                 self.bits = True

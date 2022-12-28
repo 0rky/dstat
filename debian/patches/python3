@@ -1,0 +1,15 @@
+Description: use python3
+Author: Emanuele Rocca <ema@debian.org>
+Bug-Debian: https://bugs.debian.org/857973
+Last-Update: 2019-07-29
+
+diff --git a/dstat b/dstat
+index 9359965..f250f06 100755
+--- a/dstat
++++ b/dstat
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ 
+ ### This program is free software; you can redistribute it and/or
+ ### modify it under the terms of the GNU General Public License

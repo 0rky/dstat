@@ -1,0 +1,20 @@
+Description: print plugin name upon errors in o.extract
+Author: Emanuele Rocca <ema@debian.org>
+Last-Update: 2019-08-03
+
+--- a/dstat
++++ b/dstat
+@@ -2777,7 +2794,12 @@ def perform(update):
+         line = newline
+         oline = ''
+         for o in totlist:
+-            o.extract()
++            try:
++                o.extract()
++            except Exception as err:
++                print("\n* Exception in plugin", o.name)
++                print(err)
++
+             if o in vislist:
+                 line = line + o.show() + o.showend(totlist, vislist)
+             if op.output and step == op.delay:

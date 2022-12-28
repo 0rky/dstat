@@ -1,0 +1,10 @@
+--- a/Makefile
++++ b/Makefile
+@@ -35,7 +35,6 @@ clean:
+ test:
+ 	./dstat --version
+ 	./dstat -taf 1 5
+-	./dstat -t --all-plugins 1 5
+ 
+ dist: clean
+ 	$(MAKE) -C docs dist

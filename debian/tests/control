@@ -1,0 +1,6 @@
+Tests: cpu-header, mem-header
+Depends: dstat
+
+Tests: all-plugins
+Depends: dstat
+Restrictions: allow-stderr

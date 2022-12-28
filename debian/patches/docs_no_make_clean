@@ -1,0 +1,17 @@
+Docs artifacts are included in upstream tarball. Do not run make docs clean.
+Author: Emanuele Rocca <ema@debian.org>
+Last-Update: 2019-08-03
+
+diff --git Makefile Makefile
+index c371f62..e1d5358 100644
+--- a/Makefile
++++ b/Makefile
+@@ -30,7 +30,7 @@ docs-install:
+ 
+ clean:
+ 	rm -f examples/*.pyc plugins/*.pyc
+-	$(MAKE) -C docs clean
++	#$(MAKE) -C docs clean
+ 
+ test:
+ 	./dstat --version
