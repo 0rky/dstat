@@ -2563,7 +2563,6 @@ def main():
             header = ('"Author:","Dag Wieers <dag@wieers.com>"','','','','"URL:"','"http://dag.wieers.com/home-made/dstat/"\n')
             outputfile.write(char['sep'].join(header))
         else:
-            outputfile = open(op.output, 'w', buffering=1)
             outputfile = open(op.output, 'w+', buffering=1)
             outputfile.write('"Dstat %s CSV output"\n' % VERSION)
             header = ('"Author:","Dag Wieers <dag@wieers.com>"','','','','"URL:"','"http://dag.wieers.com/home-made/dstat/"\n')
