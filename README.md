@@ -16,7 +16,7 @@ At first clone the repo:
 git clone https://github.com/0rky/dstat
 
 ```
-If you want to do capture some performance metrics an example will be:  
+If you want to capture some performance metrics of a machine, an example will be:  
 ```
 /path_to_repo/dstat -t -l -d --noupdate --output /path_to_output_file/output.csv 15
 
